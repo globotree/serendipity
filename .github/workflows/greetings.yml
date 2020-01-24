@@ -1,0 +1,18 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Message that will be displayed on users'' first issue'
+        pr-message: 'Message that will be displayed on users'' first pr'
+- name: Setup Go for use with actions
+  uses: actions/setup-go@v1.0.0
+  with:
+    # The Go version to download (if necessary) and use. Example: 1.9.3
+    version: # optional, default is 1.10
